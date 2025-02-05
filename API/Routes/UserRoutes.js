@@ -73,6 +73,7 @@ Router.post('/signup', async (req, res) => {
       const ytUser = await newUser.save();
 
       res.status(200).json({
+        msg: "Account created successfully...",
         newUser: ytUser
       });
 
