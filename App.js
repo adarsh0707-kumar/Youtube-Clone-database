@@ -5,6 +5,7 @@ require('dotenv').config();
 const mongoose = require('mongoose');
 const fileUpload = require('express-fileupload');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const userRouters = require('./API/Routes/UserRoutes');
 const videoRouters = require('./API/Routes/VideoRoutes');
@@ -31,6 +32,7 @@ app.use(fileUpload({
   tempFileDir: '/tmp'
 }));
 
+app.use(cors());
 app.use('/user', userRouters);
 app.use('/video', videoRouters);
 app.use('/comment', commentRouters);
