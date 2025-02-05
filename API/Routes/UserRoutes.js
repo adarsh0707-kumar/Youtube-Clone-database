@@ -111,7 +111,7 @@ Router.post('/login', async (req, res) => {
 
     if (users.length == 0) {
       return res.status(404).json({
-        error: "Email is registered..."
+        error: "User not found..."
       });
     }
 
